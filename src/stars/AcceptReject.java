@@ -5,6 +5,12 @@
  */
 package stars;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
 /**
  *
  * @author Thejan Rajapakshe < coder [dot] clix [at] gmail [dot] com >
@@ -16,15 +22,33 @@ public class AcceptReject {
     double xMax;
     double fMax;
 
+    /**
+     * Default Constructor method
+     */
     public AcceptReject() {
     }
 
+    /**
+     *
+     * Constructor method
+     *
+     * @param min
+     * @param max
+     */
     public AcceptReject(double min, double max) {
         this.xMin = min;
         this.xMax = max;
         this.equation = "";
         fMax = this.getFMax(0.001);
     }
+
+    /**
+     * Constructor method
+     *
+     * @param min
+     * @param max
+     * @param eq
+     */
     public AcceptReject(double min, double max, String eq) {
         this.xMin = min;
         this.xMax = max;
@@ -32,6 +56,12 @@ public class AcceptReject {
         fMax = this.getFMax(0.001);
     }
 
+    /**
+     *
+     * @param min
+     * @param max
+     * @param eq
+     */
     public void setData(double min, double max, String eq) {
         this.xMin = min;
         this.xMax = max;
@@ -39,6 +69,10 @@ public class AcceptReject {
         fMax = this.getFMax(0.001);
     }
 
+    /**
+     *
+     * @return random double value within the area of curve
+     */
     public double getRandomNumber() {
         UniformRandom ur = new UniformRandom();
         do {
@@ -53,6 +87,10 @@ public class AcceptReject {
         } while (true);
     }
 
+    /**
+     *
+     * @return random point [x,y] array within the area of the curve
+     */
     public double[] getRandomPoint() {
         UniformRandom ur = new UniformRandom();
         double point[] = new double[2];
@@ -70,6 +108,11 @@ public class AcceptReject {
         } while (true);
     }
 
+    /**
+     *
+     * @param precision
+     * @return F(x) max value of the function
+     */
     public double getFMax(double precision) {
         double counter = xMin;
         double fMax = this.fx(xMin);
@@ -86,9 +129,13 @@ public class AcceptReject {
         return 100;
     }
 
+    /**
+     *
+     * @param x
+     * @return f(x) value of the function for the x valueÏ
+     */
     public double fx(double x) {
         double value = 10;
-//        x = 100;
 //        ScriptEngineManager mgr = new ScriptEngineManager();
 //        ScriptEngine engine = mgr.getEngineByName("JavaScript");
 //        String temp_equation = this.equation.replace("x", "" + x);

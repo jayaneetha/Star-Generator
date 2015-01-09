@@ -23,7 +23,10 @@ public class Panel extends JPanel {
         super.paintComponent(g); //To change body of generated methods, choose Tools | Templates.
         doDrawing(g);
     }
-
+/**
+ * 
+ * @param g 
+ */
     public void doDrawing(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
@@ -47,13 +50,15 @@ public class Panel extends JPanel {
             int x = (int) ((p[0] / stars.Stars.ar.xMax) * w);
             int y = (int) (h - ((p[1] / stars.Stars.ar.fMax) * h));
             int l = 5;
-            if (ur.getRandomBool(10)) {
+            double randomness = stars.Stars.bigStarAmount;
+            
+            if (ur.getRandomBool(randomness)) {
                 l = l * 2;
             }
-            
-            Color starColor = ur.getRandomColor();
+
+            Color starColor = ur.getRandomColor(stars.Stars.red, stars.Stars.green, stars.Stars.blue, stars.Stars.alpha);
             g2d.setColor(starColor);
-            
+
             g2d.drawLine(x, y, x + l, y);
             g2d.drawLine(x, y, x - l, y);
             g2d.drawLine(x, y, x, y + l);
@@ -62,9 +67,9 @@ public class Panel extends JPanel {
             g2d.drawLine(x, y, x + l, y - l);
             g2d.drawLine(x, y, x - l, y + l);
             g2d.drawLine(x, y, x - l, y - l);
-            
-            int ol=(int) l/3;
-            g2d.fillOval(x-ol, y-ol, 2*ol, 2*ol);
+
+            int ol = (int) l / 3;
+            g2d.fillOval(x - ol, y - ol, 2 * ol, 2 * ol);
             g2d.setColor(Color.WHITE);
             g2d.drawLine(x, y, x, y);
         }

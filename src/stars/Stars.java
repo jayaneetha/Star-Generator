@@ -5,10 +5,6 @@
  */
 package stars;
 
-import java.awt.Color;
-import java.util.Timer;
-import java.util.TimerTask;
-
 /**
  *
  * @author Thejan Rajapakshe < coder [dot] clix [at] gmail [dot] com >
@@ -16,24 +12,20 @@ import java.util.TimerTask;
 public class Stars {
 
     public static AcceptReject ar;
+    public static int bigStarAmount;
+    public static int red;
+    public static int green;
+    public static int blue;
+    public static int alpha;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        int refreshInterval = 1000*60;
-        ar = new AcceptReject(0, 1);
-
-        Frame fm = new Frame();
-        fm.setVisible(true);
-
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-
-            @Override
-            public void run() {
-                Panel p = new Panel();
-                fm.setBackground(Color.BLACK);
-                fm.add(p);
-            }
-        }, refreshInterval, refreshInterval);
+        initial i = new initial();
+        i.setVisible(true);
+        i.setLocationRelativeTo(null);
     }
 
 }

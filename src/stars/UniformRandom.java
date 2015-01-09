@@ -54,4 +54,11 @@ public class UniformRandom {
         Color c = new Color(r, g, b);
         return c;
     }
+    public Color getRandomColor(int R, int G, int B, int A){
+        int r = this.getRandomInt(R);
+        int g = this.getRandomInt(G);
+        int b = this.getRandomInt(B);
+        Color c = new Color(r, g, b, A);
+        return c;
+    }
 }
