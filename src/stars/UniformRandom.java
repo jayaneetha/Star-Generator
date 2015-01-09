@@ -13,10 +13,15 @@ import java.util.Random;
  * @author Thejan Rajapakshe < coder [dot] clix [at] gmail [dot] com >
  */
 public class UniformRandom {
+    Random Rnd;
+
+    public UniformRandom() {
+        Rnd = new Random();
+    }
 
     public boolean getRandomBool() {
         boolean rnd = false;
-        double r = new Random().nextDouble() - 0.5;
+        double r = Rnd.nextDouble() - 0.5;
         if (r > 0) {
             rnd = true;
         }
@@ -25,7 +30,7 @@ public class UniformRandom {
     
     public boolean getRandomBool(double TruePercentage){
        boolean rnd = false;
-        double r = new Random().nextDouble() - (TruePercentage/100);
+        double r = Rnd.nextDouble() - (TruePercentage/100);
         if (r < 0) {
             rnd = true;
         }
@@ -33,17 +38,17 @@ public class UniformRandom {
     }
     
     public double getRandomDouble(){
-        double rnd = new Random().nextDouble();
+        double rnd = Rnd.nextDouble();
         return rnd;
     }
     
     public int getRandomInt(){
-        int rnd = new Random().nextInt();
+        int rnd = Rnd.nextInt();
         return rnd;
     }
     
     public int getRandomInt(int bound){
-        int rnd = new Random().nextInt(bound);
+        int rnd = Rnd.nextInt(bound);
         return rnd;
     }
     

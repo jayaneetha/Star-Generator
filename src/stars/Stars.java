@@ -12,6 +12,7 @@ package stars;
 public class Stars {
 
     public static AcceptReject ar;
+    public static int starAmount;
     public static int bigStarAmount;
     public static int red;
     public static int green;

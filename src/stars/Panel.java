@@ -44,15 +44,15 @@ public class Panel extends JPanel {
         g2d.setBackground(Color.BLACK);
 
         int i = 0;
-        for (int j = 0; j < 100; j++) {
+        for (int j = 0; j < stars.Stars.starAmount; j++) {
 
             double[] p = stars.Stars.ar.getRandomPoint();
             int x = (int) ((p[0] / stars.Stars.ar.xMax) * w);
             int y = (int) (h - ((p[1] / stars.Stars.ar.fMax) * h));
             int l = 5;
-            double randomness = stars.Stars.bigStarAmount;
+            double randomnessBigStars = stars.Stars.bigStarAmount;
             
-            if (ur.getRandomBool(randomness)) {
+            if (ur.getRandomBool(randomnessBigStars)) {
                 l = l * 2;
             }
 
