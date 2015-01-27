@@ -135,16 +135,33 @@ public class AcceptReject {
      * @return f(x) value of the function for the x valueÏ
      */
     public double fx(double x) {
-        double value = 10;
-//        ScriptEngineManager mgr = new ScriptEngineManager();
-//        ScriptEngine engine = mgr.getEngineByName("JavaScript");
-//        String temp_equation = this.equation.replace("x", "" + x);
-//        try {
-//            value = (double) engine.eval(temp_equation);
-//        } catch (ScriptException ex) {
-//            Logger.getLogger(AcceptReject.class.getName()).log(Level.SEVERE, null, ex);
-//            value = 0;
-//        }
+        double value = 1;
+
+        switch (equation) {
+            case "sin(x)":
+                value = Math.sin(x);
+                break;
+            case "cos(x)":
+                value = Math.cos(x);
+                break;
+            case "tan(x)":
+                value = Math.tan(x);
+                break;
+            case "log(x)":
+                value = Math.log(x);
+                break;
+            default:
+                ScriptEngineManager mgr = new ScriptEngineManager();
+                ScriptEngine engine = mgr.getEngineByName("JavaScript");
+                String temp_equation = this.equation.replace("x", "" + x);
+                try {
+                    value = (double) engine.eval(temp_equation);
+                } catch (ScriptException ex) {
+                    Logger.getLogger(AcceptReject.class.getName()).log(Level.SEVERE, null, ex);
+                    value = 0;
+                }
+
+        }
         return value;
     }
 }

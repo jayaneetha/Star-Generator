@@ -61,6 +61,16 @@ public class initial extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jSliderAmountOfBigStars = new javax.swing.JSlider();
         jLabelAmountOfBigStars = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jComboFunction = new javax.swing.JComboBox();
+        jTextFunction = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jSliderMinimum = new javax.swing.JSlider();
+        jLabelMinimum = new javax.swing.JLabel();
+        jSliderMaximum = new javax.swing.JSlider();
+        jLabelMaximum = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -303,6 +313,90 @@ public class initial extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel2.setText("Pattern Function");
+
+        jComboFunction.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "sin(x)", "cos(x)", "tan(x)", "log(x)", "Polynimial" }));
+        jComboFunction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboFunctionActionPerformed(evt);
+            }
+        });
+
+        jTextFunction.setEditable(false);
+
+        jLabel11.setText("Minimum");
+
+        jSliderMinimum.setMinimum(-100);
+        jSliderMinimum.setValue(0);
+        jSliderMinimum.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSliderMinimumStateChanged(evt);
+            }
+        });
+
+        jLabelMinimum.setText("0");
+
+        jSliderMaximum.setMinimum(-100);
+        jSliderMaximum.setToolTipText("");
+        jSliderMaximum.setValue(3);
+        jSliderMaximum.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSliderMaximumStateChanged(evt);
+            }
+        });
+
+        jLabelMaximum.setText("3");
+
+        jLabel14.setText("Maximum");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextFunction, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboFunction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSliderMinimum, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSliderMaximum, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelMinimum)
+                    .addComponent(jLabelMaximum))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jComboFunction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFunction, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabelMinimum)
+                    .addComponent(jSliderMinimum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabelMaximum)
+                    .addComponent(jSliderMaximum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -320,10 +414,6 @@ public class initial extends javax.swing.JFrame {
                 .addComponent(jButtonGenerate)
                 .addGap(6, 6, 6))
             .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jLabel7)
-                .addGap(103, 103, 103))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -331,20 +421,30 @@ public class initial extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonGenerate)
                 .addContainerGap())
@@ -360,15 +460,27 @@ public class initial extends javax.swing.JFrame {
         stars.Stars.green = jSliderGreen.getValue();
         stars.Stars.blue = jSliderBlue.getValue();
         stars.Stars.alpha = jSliderAlpha.getValue();
-        int refreshInterval = 1000 * jSliderRefreshInterval.getValue() ;
-        ar = new AcceptReject(0, 1);
-        
+        int refreshInterval = 1000 * jSliderRefreshInterval.getValue();
+        String func = "";
+        switch (jComboFunction.getSelectedIndex()) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                func = jComboFunction.getSelectedItem().toString();
+                break;
+            case 4:
+                func = jTextFunction.getText();
+                break;
+        }
+        ar = new AcceptReject(jSliderMinimum.getValue(), jSliderMaximum.getValue(), func);
+
         Frame fm = new Frame();
         fm.setVisible(true);
-        
+
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
-            
+
             @Override
             public void run() {
                 Panel p = new Panel();
@@ -414,6 +526,27 @@ public class initial extends javax.swing.JFrame {
         jLabelAmountOfBigStars.setText(String.valueOf(jSliderAmountOfBigStars.getValue()) + " %");
     }//GEN-LAST:event_jSliderAmountOfBigStarsStateChanged
 
+    private void jComboFunctionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboFunctionActionPerformed
+        // TODO add your handling code here:
+        if (jComboFunction.getSelectedIndex() == 4) {
+            jTextFunction.setEditable(true);
+        } else {
+            jTextFunction.setEditable(false);
+        }
+    }//GEN-LAST:event_jComboFunctionActionPerformed
+
+    private void jSliderMinimumStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderMinimumStateChanged
+        // TODO add your handling code here:
+        jLabelMinimum.setText(String.valueOf(jSliderMinimum.getValue()));
+        jSliderMaximum.setMinimum(jSliderMinimum.getValue());
+    }//GEN-LAST:event_jSliderMinimumStateChanged
+
+    private void jSliderMaximumStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderMaximumStateChanged
+        // TODO add your handling code here:
+        jLabelMaximum.setText(String.valueOf(jSliderMaximum.getValue()));
+        jSliderMinimum.setMaximum(jSliderMaximum.getValue());
+    }//GEN-LAST:event_jSliderMaximumStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -451,8 +584,12 @@ public class initial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonGenerate;
+    private javax.swing.JComboBox jComboFunction;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -465,18 +602,24 @@ public class initial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelAmountOfStars;
     private javax.swing.JLabel jLabelBlue;
     private javax.swing.JLabel jLabelGreen;
+    private javax.swing.JLabel jLabelMaximum;
+    private javax.swing.JLabel jLabelMinimum;
     private javax.swing.JLabel jLabelRed;
     private javax.swing.JLabel jLabelRefreshInterval;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JSlider jSliderAlpha;
     private javax.swing.JSlider jSliderAmountOfBigStars;
     private javax.swing.JSlider jSliderAmountOfStars;
     private javax.swing.JSlider jSliderBlue;
     private javax.swing.JSlider jSliderGreen;
+    private javax.swing.JSlider jSliderMaximum;
+    private javax.swing.JSlider jSliderMinimum;
     private javax.swing.JSlider jSliderRed;
     private javax.swing.JSlider jSliderRefreshInterval;
+    private javax.swing.JTextField jTextFunction;
     // End of variables declaration//GEN-END:variables
 }

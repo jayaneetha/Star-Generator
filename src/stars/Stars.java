@@ -18,6 +18,7 @@ public class Stars {
     public static int green;
     public static int blue;
     public static int alpha;
+    
 
     /**
      *
